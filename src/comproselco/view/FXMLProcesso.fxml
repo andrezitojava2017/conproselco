@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="623.0" prefWidth="895.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comproselco.controler.FXMLProcessoController">
+    <stylesheets>
+        <URL value="@/comproselco/style/processo.css" />
+    </stylesheets>
+   <children>
+      <HBox id="hbox" alignment="CENTER" layoutX="268.0" layoutY="241.0" prefHeight="100.0" prefWidth="200.0" stylesheets="@../style/processo.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <JFXButton fx:id="btnSalvar" onAction="#salvarProcesso" ripplerFill="#5087dac2" text="SALVAR">
+               <graphic>
+                  <ImageView fitHeight="69.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagens/salvar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Bauhaus 93" size="15.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnAtualizar" buttonType="RAISED" ripplerFill="#5087dac2" text="ATUALIZAR">
+               <graphic>
+                  <ImageView fitHeight="69.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagens/update.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Bauhaus 93" size="15.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btnProcurar" buttonType="RAISED" onAction="#btnLocalizarProcessos" ripplerFill="#5087dac2" text="PROCURAR">
+               <graphic>
+                  <ImageView fitHeight="69.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagens/search.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Bauhaus 93" size="15.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btnSair" buttonType="RAISED" ripplerFill="#5087dac2" text="SAIR">
+               <graphic>
+                  <ImageView fitHeight="69.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagens/exit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Bauhaus 93" size="15.0" />
+               </font></JFXButton>
+         </children>
+      </HBox>
+      <AnchorPane layoutY="100.0" prefHeight="420.0" prefWidth="895.0" AnchorPane.bottomAnchor="103.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <JFXTextArea fx:id="textAreaDescricao" focusColor="#020f25" labelFloat="true" layoutX="14.0" layoutY="238.0" prefHeight="146.0" prefWidth="558.0" promptText="Descrição:" unFocusColor="#477acd">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXTextArea>
+            <VBox fx:id="vbox" alignment="CENTER_LEFT" layoutX="586.0" layoutY="14.0" prefHeight="254.0" prefWidth="203.0" style="-fx-padding: 15px;" stylesheets="@../style/processo.css" AnchorPane.leftAnchor="586.0" AnchorPane.rightAnchor="106.0" AnchorPane.topAnchor="14.0">
+               <children>
+                  <Label text="Tipo do processo:" textAlignment="CENTER">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="checkBoxTipoSeletivo" mnemonicParsing="false" onAction="#checkSeletiva" style="-fx-padding: 15;" text="Seletiva">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets></CheckBox>
+                  <CheckBox fx:id="checkBoxTipoConcurso" mnemonicParsing="false" onAction="#checkConcurso" style="-fx-padding: 15;" text="Concurso" />
+                  <Label text="Lei autorizativa:">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textFieldLeiAutorizativa" disable="true" prefHeight="31.0" prefWidth="126.0" promptText="Lei" stylesheets="@../style/processo.css" />
+                  <Button fx:id="btnBsucarLei" mnemonicParsing="false" onAction="#buscarLei" text="Buscar Lei" />
+               </children>
+            </VBox>
+            <Pane layoutX="16.0" layoutY="14.0" prefHeight="194.0" prefWidth="547.0" style="-fx-border-color: #4b636f;">
+               <children>
+                  <JFXDatePicker fx:id="datePickerDataValidade" layoutX="247.0" layoutY="124.0" prefHeight="34.0" prefWidth="203.0" promptText="Data validade" />
+                  <JFXTextField fx:id="textFieldNumeroProcesso" labelFloat="true" layoutX="14.0" layoutY="36.0" prefHeight="34.0" prefWidth="108.0" promptText="NºProcesso" />
+                  <JFXTextField fx:id="textFieldAnoProcesso" labelFloat="true" layoutX="140.0" layoutY="36.0" prefHeight="34.0" prefWidth="108.0" promptText="Ano Processo" />
+                  <JFXDatePicker fx:id="datePickerDataHomologacao" layoutX="21.0" layoutY="124.0" prefHeight="34.0" prefWidth="203.0" promptText="Data homologação" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <HBox alignment="CENTER" layoutX="62.0" layoutY="26.0" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #2995d2;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="91.0" fitWidth="161.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagens/ico_newdocuments.png" />
+               </image>
+            </ImageView>
+            <Label text="CADASTRO DE PROCESSO">
+               <font>
+                  <Font name="Bauhaus 93" size="29.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

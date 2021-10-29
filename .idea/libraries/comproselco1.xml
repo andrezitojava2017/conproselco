@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="comproselco1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/comproselco.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/run1190489550/lib/mongo-java-driver-3.12.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/run1190489550/lib/jfoenix-8.0.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/run1190489550/lib/json-simple-1.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

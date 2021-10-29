@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="772.0" prefWidth="1158.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comproselco.controler.FXMLConsultaEditalController">
+   <children>
+      <SplitPane layoutX="14.0" layoutY="14.0" prefHeight="102.0" prefWidth="446.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <items>
+            <AnchorPane prefHeight="100.0" prefWidth="353.0">
+               <children>
+                  <Label layoutX="22.0" layoutY="27.0" prefHeight="21.0" prefWidth="98.0" text="PROCESSO:">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+                  <TextField fx:id="textNumProcesso" editable="false" layoutX="120.0" layoutY="25.0" prefHeight="33.0" prefWidth="113.0" promptText="005/2020" />
+                  <Button fx:id="btnBuscarProcesso" layoutX="247.0" layoutY="24.0" mnemonicParsing="false" onAction="#buscarProcessos" prefHeight="31.0" prefWidth="113.0" text="Selecionar" AnchorPane.topAnchor="24.0" />
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <SplitPane layoutX="14.0" layoutY="136.0" prefHeight="649.0" prefWidth="1138.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="120.0">
+         <items>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="180.0" layoutY="32.0" prefHeight="46.0" prefWidth="1136.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label text="RELAÇÃO DE CANDIDATOS CONVOCADOS POR EDITAL">
+                           <font>
+                              <Font name="Arial Narrow Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="tableListaEditais" layoutX="14.0" layoutY="70.0" onMouseClicked="#selecionarEdital" prefHeight="450.0" prefWidth="222.0">
+                    <columns>
+                      <TableColumn fx:id="colNumEdital" prefWidth="99.00003051757812" text="EDITAL" />
+                        <TableColumn fx:id="colDataEdital" prefWidth="121.0" text="DATA" />
+                    </columns>
+                  </TableView>
+                  <TableView fx:id="tableListaConvocadosPorEdital" layoutX="242.0" layoutY="70.0" prefHeight="450.0" prefWidth="881.0">
+                     <columns>
+                        <TableColumn fx:id="colClassificacao" prefWidth="130.0" text="CLASSIFICACAO" />
+                        <TableColumn fx:id="colNomeCandidato" prefWidth="405.0" text="CANDIDATO" />
+                        <TableColumn fx:id="colCargo" prefWidth="238.0" text="CARGO" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="btnEnviarEmail" layoutX="503.0" layoutY="551.0" mnemonicParsing="false" onAction="#enviarEmailCandidatos" text="Enviar E-mail">
+                     <graphic>
+                        <ImageView fitHeight="59.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imagens/send-mail.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
